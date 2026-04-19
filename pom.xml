@@ -20,7 +20,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <kafkaesque.version>2.0.0-SNAPSHOT</kafkaesque.version>
+        <kafkaesque.version>2.0.0</kafkaesque.version>
         <testcontainers.version>2.0.4</testcontainers.version>
     </properties>
 

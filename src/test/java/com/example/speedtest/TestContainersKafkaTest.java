@@ -1,6 +1,7 @@
 package com.example.speedtest;
 
-import org.testcontainers.containers.KafkaContainer;
+import org.testcontainers.kafka.KafkaContainer;
+import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
@@ -13,7 +14,8 @@ class TestContainersKafkaTest extends AbstractOrderProcessorTest {
 
     @Container
     static final KafkaContainer KAFKA =
-            new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.5.0"));
+            new KafkaContainer(DockerImageName.parse("apache/kafka-native:3.8.0"))
+                    .waitingFor(Wait.forListeningPort());
 
     @Override
     protected String getBootstrapServers() {
