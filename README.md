@@ -20,6 +20,10 @@ piece of hardware) we see the following figures:
 | EmbeddedKafkaBroker                | 1851 ms          | 3090 ms           |
 | TestContainers Kafka               | 1958 ms          | 251 ms            |
 
+Running on a much more modern Ryzen 9 system the startup durations are, 
+respectively, around 11ms, 346ms, 669ms, and 346ms - so there everything's
+about three times as fast.
+
 Running in-process Kafkaesque looks great. Running under testcontainers it's
 still looking good - and some of that will be Testcontainers, Ryuk, Docker 
 overhead rather than Kafkaesque per se.
